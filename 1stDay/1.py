@@ -38,3 +38,4 @@ for x in f:
 
 print(count1)
 print(count2)
+f.close()

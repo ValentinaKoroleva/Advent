@@ -66,4 +66,4 @@ oxygen = bin2dec(oxygen_list[0].strip())
 CO2 = bin2dec(CO2_list[0].strip())
 
 print(oxygen * CO2)
-
+f.close()

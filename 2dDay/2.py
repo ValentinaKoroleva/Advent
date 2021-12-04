@@ -18,3 +18,4 @@ for x in f:
 
 print(depth_1 * h_position)
 print(depth_2 * h_position)
+f.close()
