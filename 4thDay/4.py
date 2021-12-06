@@ -5,14 +5,14 @@ f = open("input.txt")
 chosen_numbers = np.array(f.readline().strip().split(','), dtype=float)
 f.readline()
 f_list = f.readlines()
-data = [np.zeros((5,5))]
+data = [np.zeros((5, 5))]
 n = 0
 b_number = 0
 for row in f_list:
     if n > 4:
         n = 0
         b_number = b_number + 1
-        array = np.zeros((5,5))
+        array = np.zeros((5, 5))
         data.append(array)
     else:
         row = row.strip().replace('  ', ' ')
