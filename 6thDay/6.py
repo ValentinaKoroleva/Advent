@@ -1,6 +1,6 @@
 import time
 f = open('input.txt')
-# f = open('example.txt')
+# f = open('example_1.txt')
 initial_state = f.readline()
 fish_school = initial_state.strip().split(',')
 # print('Initial state: ' + initial_state)

@@ -1,7 +1,7 @@
 # First Part
 
 f = open("input.txt")
-# f = open("example.txt")
+# f = open("example_1.txt")
 f_list = f.readlines()
 
 

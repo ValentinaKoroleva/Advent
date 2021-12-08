@@ -1,6 +1,6 @@
 import numpy as np
 import copy
-# f = open("example.txt")
+# f = open("example_1.txt")
 f = open("input.txt")
 chosen_numbers = np.array(f.readline().strip().split(','), dtype=float)
 f.readline()
