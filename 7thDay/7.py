@@ -1,7 +1,7 @@
 import math
 import statistics
 f = open('input.txt')
-# f = open('example_1.txt')
+# f = open('example.txt')
 initial_state = f.readline()
 crabs = initial_state.strip().split(',')
 crabs = list(map(int, crabs))

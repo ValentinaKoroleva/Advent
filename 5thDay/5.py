@@ -1,6 +1,6 @@
 # x1 - horizontal, i.e. col, y1 - vertical, i.e. row
 import numpy as np
-# f = open('example_1.txt')
+# f = open('example.txt')
 f = open('input.txt')
 f_list = f.readlines()
 
