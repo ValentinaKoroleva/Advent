@@ -8,7 +8,6 @@ f_list = f.readlines()
 start_nodes = []
 end_nodes = []
 neighbours = dict()
-task = 2
 for line in f_list:
     line = line.strip()
     if re.search("start", line):
@@ -37,31 +36,6 @@ def is_big(cave_name):
     return upper_case == cave_name
 
 
-def which_part(node, path, task_part):
-    if task_part == 1:
-        return node not in path
-    if task_part == 2:
-        fav = get_favourite(path)
-        # if fav is None:
-        #     fav = node
-        return node not in path or fav is None
-        # return node != path[0]
-
-
-def get_favourite(path):
-    count = dict()
-    result = None
-    for element in path:
-        count[element] = count.get(element, 0) + 1
-    for element in path:
-        if not is_big(element) and count[element] > 1 and result is None:
-            result = element
-            # print(path)
-        # elif not is_big(element) and count[element] > 1 and result is not None:
-        #     print(path)
-    return result
-
-
 all_paths = []
 
 
@@ -77,7 +51,7 @@ def create_paths(start, paths):
     else:
         for p in paths:
             for new in neighbours[p[-1]]:
-                if is_big(new) or which_part(new, p, task):
+                if is_big(new) or new not in p:
                     result.append(p + [new])
                     all_paths.append(p + [new])
     return result
@@ -95,12 +69,12 @@ while len(suka) > 0:
 def bad_path(path):
     if path[-1] not in end_nodes:
         return True
-    # count = dict()
-    # for c in path:
-    #     count[c] = count.get(c, 0) + 1
-    # for c in count.keys():
-    #     if not is_big(c) and count[c] > 1:
-    #         return True
+    count = dict()
+    for c in path:
+        count[c] = count.get(c, 0) + 1
+    for c in count.keys():
+        if not is_big(c) and count[c] > 1:
+            return True
     return False
 
 
@@ -111,8 +85,6 @@ for a in all_paths:
 
 print(len(total_paths))
 # print(total_paths)
-# for a in total_paths:
-#     print(['start'] + a + ['end'])
 # print(end_nodes)
 # print(is_big('HN'))
 f.close()
